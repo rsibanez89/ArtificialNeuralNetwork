@@ -28,7 +28,7 @@ public class ArtificialNeuralNetwork {
 				Vector<Double> inputs = new Vector<Double>();
 				inputs.add(1.0);
 				inputs.add(t.Height);
-				inputs.addElement(t.Weight);
+				inputs.add(t.Weight);
 				int error = perceptron.train(inputs, output);
 				System.out.println(error);
 			}
