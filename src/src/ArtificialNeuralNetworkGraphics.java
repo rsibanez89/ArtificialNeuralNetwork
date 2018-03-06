@@ -63,14 +63,14 @@ public class ArtificialNeuralNetworkGraphics {
 				boolean limitFound = false;
 				Vector <Double> test = new Vector<>();
 				test.add(1.0);
-				test.add(0d); // Height 
+				test.add(0d/100); // Height 
 				test.add((double)0);
 				int initialGender = perceptron.predict(test);
 				for (int w = 1; w < 100 && !limitFound; w++)
 				{
 					test = new Vector<>();
 					test.add(1.0);
-					test.add(0d); // Height 
+					test.add(0d/100); // Height 
 					test.add((double)w);
 					if(perceptron.predict(test) != initialGender)
 					{
@@ -79,19 +79,19 @@ public class ArtificialNeuralNetworkGraphics {
 					}
 				}
 					
-				Point pointEnd = new Point(200, 100);
+				Point pointEnd = new Point(200, 50);
 				//leave Height as 200
 				limitFound = false;
 				test = new Vector<>();
 				test.add(1.0);
-				test.add(220d); // Height 
+				test.add(200d/100); // Height 
 				test.add((double)0);
 				initialGender = perceptron.predict(test);
-				for (int w = 1; w < 100 && !limitFound; w++)
+				for (int w = 1; w < 150 && !limitFound; w++)
 				{
 					test = new Vector<>();
 					test.add(1.0);
-					test.add(200d); // Height 
+					test.add(200d/100); // Height 
 					test.add((double)w);
 					if(perceptron.predict(test) != initialGender)
 					{
@@ -118,7 +118,7 @@ class CartesianFrame extends JFrame {
 
 	public void showUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Cartesian");
+		setTitle("Artificial Neural Network Graphics");
 		setSize(1300, 900);
 		setVisible(true);
 	}
